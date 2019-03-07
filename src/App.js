@@ -2,67 +2,76 @@ import React from "react";
 import "./App.css";
 import PropTypes from "prop-types";
 import SuperComponent from "./components/SuperComponent";
-import Parent from "./components/Parent";
+import Students from "./components/Students";
+import ClassRoom from "./components/ClassRoom";
+
+console.log(Students);
+console.log(ClassRoom);
 
 /* eslint-disable no-unused-vars, no-console */
-function App(props) {
-  const product = {
-    name: "ajax",
-    description: "Cleans your bathroom real good"
-  };
-  const names = ["Bob", "Stand", "Todd", "Ted"];
+// function App(props) {
+const product = {
+  name: "ajax",
+  description: "Cleans your bathroom real good"
+};
+const names = ["Bob", "Stand", "Todd", "Ted"];
+const App = () => {
   return (
     <div>
-      {/* send in a prop called "message", give it the string "Hello World" */}
-      <div>This better say "Hello World": <SuperComponent message={"Hello World"} /> </div>
-      {/* send in a prop called "message", give it the string "Goodbye World" */}
-      <div>This better say "Goodbye World": <SuperComponent /> </div>
-      {/* send in a prop called "message", give it the string "Props are awesome" */}
-      <div>This better say "Props are awesome": <SuperComponent /> </div>
-      {/* send in a prop called "message", give it the string "I totally get this now" */}
-      <div>This better say "I totally get this now": <SuperComponent /> </div>
+      {/* TODO: 
+        Follow the intructions laid out below. Write each component on the line
+        below the comment. Don't worry that they will be repeated. 
+
+        Unrelated Tip: The linter appears to like double quotes here. If you get
+        an error with a string.. check to see if you used single or double quotes 
+       */}
 
 
-      {/* send in a prop called "magicNumber", give it the number 42*/}
-      <div>This better say 42: <SuperComponent /> </div>
-      {/* send in a prop called "magicNumber", give it the number 21*/}
-      <div>This better say 21: <SuperComponent /> </div>
+      {/* pass SuperComponent the string: "hello word" in a prop called "message"*/}
+      <SuperComponent message="hello world" />
+      {/* pass SuperComponent the string: "goodbye world" in a prop called "message" */}
 
+      {/* pass SuperComponent the string: "Props are awesome world" in a prop called "message" */}
 
-      {/* send in a prop called "product", give it the variable product*/}
-      <div>This better say "ajax": <SuperComponent /> </div>
-      {/* send in a prop called "product", give it an object with a key of "name" and a value "pepsi"*/}
-      <div>This better say "pepsi": <SuperComponent /> </div>
-      {/* send in a prop called "product", give it an object with a key of "name" and a value "nike"*/}
-      <div>This better say "nike": <SuperComponent /> </div>
+      {/* pass SuperComponent the number: 42 in a prop called "magicNumber" */}
 
+      {/* pass SuperComponent the number: 21 in a prop called "magicNumber" */}
 
-      {/* send in a prop called "names", with the value of the variable names*/}
-      <div>This better say "Bob, Stand, Todd, Ted" : <SuperComponent /> </div>
-      {/* send in a prop called "names", give it an array ["Brodie","Alicia","Margo"]*/}
-      <div>This better say "Brodie, Alicia, Margo" : <SuperComponent /> </div>
-      {/* send in a prop called "names", give it an array ["Titus","Axel","Claire"]*/}
-      <div>This better say "Titus, Axel, Claire" : <SuperComponent /> </div>
+      {/*
+        What have we seen here? This "SuperComponent" takes multiple 
+        props and simply displays the content for whichever prop was passed in. 
+        Honestly, this is a pretty abnormal pattern. We don't usually
+        write components like this. Let's move on..
+      */}
 
-      {/* Use App's props*/}
-      {/* send in a prop called "products", give it the products array from App's props*/}
-      <div>This better say "Hand Sanitizer": <SuperComponent /> </div>
-      {/* send in a prop called "names", give it the names array from App's props*/}
-      <div>This better say "Robin, Lily, Barney": <SuperComponent /> </div>
-      {/* send in a prop called "magicNumber", give it the magicNumber from App's props*/}
-      <div>This better say "99": <SuperComponent /> </div>
-      {/* send in a prop called "message", give it the contact.firstName from App's props*/}
-      <div>This better say "Luke": <SuperComponent /> </div>
-      {/* send in a prop called "message", give it the contact.lastName from App's props*/}
-      <div>This better say "Skywalker": <SuperComponent /> </div>
-      {/* send in a prop called "message", give it the contact.occupation from App's props*/}
-      <div>This better say "farmer": <SuperComponent /> </div>
-      {/* send in a prop called "message", give it the contact.address from App's props*/}
-      <div>This better say "300 MiddleOfNoWhere st Tatooine": <SuperComponent /> </div>
-      <Parent />
+      {/* pass the Students component an array of names in a prop called "names" */}
+      
+      {/* 
+        Go into the Students component and take a look at is. What's it doing?
+        Try using the Students component again without the names prop. What happens? 
+        Delete this one after
+      */}
+
+      {/*
+        Go into the Students component and add support for an optional prop
+        called "groupName". Send a string of your choice and display it above 
+        the list of students
+      */}
+
+      {/*
+        The Students component should have showed us how to use props that 
+        are optional and required, as well as practice passing multiple props.
+        Next we will look at props.children
+      */}
+
+      {/* pass the ClassRoom component the string "Class Number 1" in a prop called className */}
+
+      {/* render the Students component inside the ClassRoom component; pass Students as a child */}
+
     </div>
   );
-}
+};
+
 App.propTypes = {
   products: PropTypes.array.isRequired,
   names: PropTypes.array.isRequired,
